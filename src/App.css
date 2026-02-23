@@ -1,38 +1,87 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  position: relative;
+  background-color: var(--primary-header-background-color);
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #ffffff;
+  border-bottom: 1px solid var(--primary-border-color);
 }
 
-.App-link {
-  color: #61dafb;
+.App-content {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1.winner-player {
+  font-size: medium;
+  color: #ffffff;
+}
+
+div.tic-tac-toe-game {
+  display: grid;
+  width: max-content;
+  grid-template-columns: repeat(3, 30px);
+  grid-template-rows: repeat(3, 30px);
+  grid-column-gap: 1px;
+  grid-row-gap: 1px;
+  background-color: var(--primary-border-color);
+  border: 1px solid var(--primary-border-color);
+}
+
+div.button[role="button"] {
+  background-color: var(--primary-background-color);
+  color: #ffffff;
+}
+
+div.button[role="button"].disabled {
+  background-color: #8b8d91;
+  color: #ececed;
+}
+
+div.button[role="button"]:nth-child(1) {
+  grid-area: 1 / 1 / 2 / 2;
+}
+div.button[role="button"]:nth-child(2) {
+  grid-area: 1 / 2 / 2 / 3;
+}
+div.button[role="button"]:nth-child(3) {
+  grid-area: 1 / 3 / 2 / 4;
+}
+div.button[role="button"]:nth-child(4) {
+  grid-area: 2 / 1 / 3 / 2;
+}
+div.button[role="button"]:nth-child(5) {
+  grid-area: 2 / 2 / 3 / 3;
+}
+div.button[role="button"]:nth-child(6) {
+  grid-area: 2 / 3 / 3 / 4;
+}
+div.button[role="button"]:nth-child(7) {
+  grid-area: 3 / 1 / 4 / 2;
+}
+div.button[role="button"]:nth-child(8) {
+  grid-area: 3 / 2 / 4 / 3;
+}
+div.button[role="button"]:nth-child(9) {
+  grid-area: 3 / 3 / 4 / 4;
+}
+
+button.btn-start-game {
+  width: 114.64px;
 }
